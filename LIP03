@@ -13,3 +13,50 @@ public class testeSaida {
 		}
 	}
 }
+///////////////////////////////////////////////////////////
+package lip;
+
+public class ex2 {
+
+	public static void main(String[] args) {
+	int anos = 19;
+	int meses = 3;
+	int dias = 17;
+	int soma = anos * 365;
+	soma = soma + (meses * 30);
+	soma = soma + dias;
+	System.out.println(soma);	
+	}
+}
+/////////////////////////////////////////////////////////////
+package lip;
+
+public class ex3 {
+	public static void main(String[] args) {
+		int contador = 0;
+		for(int i=2; i < 4998; i++) {
+			if(i % 2 == 0) {
+				contador += i;
+			}
+		}
+		System.out.println("A soma dos números pares entre 1 e 5000 é: " + contador);
+	}
+}
+/////////////////////////////////////////////////////////////////
+package com.exemplo;
+
+import java.util.Scanner;
+
+public class test {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite um numero: ");
+        int numero = scanner.nextInt();
+        for(int i = 0; i < 11; i++) {
+        	System.out.println(numero + "x" + i + "=" + (numero*i));
+        }
+
+                scanner.close();
+    }
+}
