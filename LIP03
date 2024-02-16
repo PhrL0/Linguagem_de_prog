@@ -1,0 +1,15 @@
+package lip;
+public class testeSaida {
+	public static void main(String[] args) {
+		int x = 0;
+		if (x > 0) {
+			System.out.println("o número é positivo");
+		}
+		else if (x == 0) {
+			System.out.println("o número é 0");
+		}
+		else {
+			System.out.println("o número é negativo");
+		}
+	}
+}
