@@ -1,0 +1,35 @@
+package aula04;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class mediaSalarial {
+
+	public static void main(String[] args) {
+		
+		ArrayList<String> listaDeNomes = new ArrayList<>();
+		ArrayList<Double> listaDeSalarios = new ArrayList<>();
+		
+		Scanner leitor = new Scanner(System.in);
+		
+		double somaSalarial = 0.0;
+		
+		for(int i = 0;i < 4;i++) {
+			System.out.print("Digite o nome dos funcionarios: ");
+			listaDeNomes.add(leitor.next());
+		}
+		for (int count = 0; count < 4; count++) {
+			System.out.print("Digite o salário do funcionario: ");
+			listaDeSalarios.add(leitor.nextDouble());
+		}
+		for (Double salario : listaDeSalarios) {
+			somaSalarial += salario;
+		}
+		
+		double mediaSalarial = somaSalarial / listaDeSalarios.size();
+		
+		System.out.println("A média salarial dos funcionarios é: " + mediaSalarial);
+		leitor.close();
+	}
+
+}
