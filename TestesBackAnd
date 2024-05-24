@@ -1,0 +1,103 @@
+package Screen;
+
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.Font;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
+
+public class Teste extends JFrame {
+
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField txtEnviarDados;
+	private JButton btnLista;
+
+	boolean flag = false;
+	int cont = 0;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Teste frame = new Teste();
+					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Teste() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1280, 900);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+
+		txtEnviarDados = new JTextField();
+		txtEnviarDados.setBounds(24, 400, 572, 69);
+		contentPane.add(txtEnviarDados);
+		txtEnviarDados.setColumns(10);
+
+		JButton btnEnviar = new JButton("Enviar");
+		btnEnviar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		btnEnviar.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnEnviar.setBounds(814, 396, 187, 69);
+		contentPane.add(btnEnviar);
+
+		btnLista = new JButton("Lista");
+
+		btnLista.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnLista.setBounds(616, 396, 187, 69);
+		contentPane.add(btnLista);
+
+		JTextArea txtRecebe = new JTextArea();
+		txtRecebe.setEditable(false);
+		txtRecebe.setBounds(24, 11, 977, 354);
+		contentPane.add(txtRecebe);
+
+		btnLista.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				char vetor[] = { 'G', 'T', 'S', 'M', 'F' };
+				String aux = txtEnviarDados.getText().toUpperCase();
+
+				for (int i = 0; i < aux.length(); i++) {
+					for (int j = 0; j < vetor.length; j++) {
+						if (aux.charAt(i) == vetor[j]) {
+							flag = true;
+						}
+					}
+				}
+				if (flag) {
+					txtRecebe.append("N" + cont++ + " " + aux);
+					flag = false;
+					txtEnviarDados.setText("");
+				} else {
+					tela2 Tela2 = new tela2();
+					Tela2.setVisible(true);
+				}
+			}
+		});
+	}
+}
