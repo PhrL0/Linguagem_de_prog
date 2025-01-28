@@ -1,0 +1,38 @@
+import streamlit as st
+
+st.title("Bem vindo ao Sistema")
+st.sidebar.title("Menu")
+op = st.sidebar.selectbox("Escolha qual feature deseja utilizar",["Avaliação de fornecedores","Projeção financeira no investimento","Controle de Sensores Industriais","Conversão de Temperatura","Cálculo de resistência equivalete"])
+
+if op == "Avaliação de fornecedores":
+    st.write("oi")
+elif op == "Conversão de Temperatura":
+
+   
+    temp1 = st.selectbox("Escolha a primeira temperatura",["Celsius", "Kelvin","Fahrenheit"])
+    
+    valorTemp = st.number_input("Insira o valor da temperatura: ")
+
+    if temp1 == "Celsius":
+        celsiusToKelvin = valorTemp + 273.15
+        celsiusToFahrenheit = (valorTemp * 1.8) + 32
+        st.success(f"Kelvin: {celsiusToKelvin}")
+        st.success(f"Fahrenheit: {celsiusToFahrenheit}")
+    elif temp1 == "Kelvin":
+        kelvinToCelsius = valorTemp - 273.15
+        kelvinToFahrenheit = ((valorTemp - 273.15) * 9/5) + 32
+        st.success(f"Kelvin: {kelvinToCelsius}")
+        st.success(f"Fahrenheit: {kelvinToFahrenheit}")
+    elif temp1 == "Fahrenheit":
+        fahrenheitToCelsius = valorTemp - (32 * 5/9)
+        fahrenheitToKelvin = valorTemp - 32 * 5/9 + 273.15
+        st.success(f'Celsius: {fahrenheitToCelsius}')
+        st.success(f'Kelvin: {fahrenheitToKelvin}')
+        #(32 °F − 32) × 5/9 = 0 °C  (32 °F − 32) × 5/9 + 273,15 = 273,15 K
+
+
+        
+
+    
+
+
